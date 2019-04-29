@@ -48,15 +48,15 @@ A word with the first letter capitalized, and the first letter of each subsequen
 
 #### Premature Generalization
 As it applies to object model design; this is the act of creating abstractions within an object model not based
-upon concrete requirements or a known future need for the abstraction. In simplest terms: “Abstraction for
-the sake of Abstraction.” 
+upon concrete requirements or a known future need for the abstraction. In simplest terms: "Abstraction for
+the sake of Abstraction." 
 
 
 ### Naming Conventions Quick Guide
-“c” = camelCase
-“P” = PascalCase
-“_” = Prefix with _Underscore
-“x” = Not Applicable.
+"c" = camelCase
+"P" = PascalCase
+"_" = Prefix with _Underscore
+"x" = Not Applicable.
 
 |Identifier | Public | Protected | Internal | Private | Notes |
 |-----------|--------|-----------|----------|---------|-------|
@@ -97,7 +97,7 @@ the sake of Abstraction.”
 |Conditionals | Avoid evaluating Boolean conditions against true or false. No embedded assignment. Avoid embedded method invocation. |
 |Exceptions | Do not use exceptions for flow control. Use throw; not throw e; when re-throwing. Only catch what you can handle. Use validation to avoid exceptions. Derive from Execption not ApplicationException. |
 |Events | Always check for null before invoking. |
-|Locking | Use lock() not Monitor.Enter(). Do not lock on an object type or “this”. Do lock on private objects.|
+|Locking | Use lock() not Monitor.Enter(). Do not lock on an object type or "this". Do lock on private objects.|
 |Dispose() & Close() | Always invoke them if offered, declare where needed. |
 |Finalizers | Avoid. Use the C# Destructors. Do not create Finalize() method. |
 |AssemblyVersion | Increment manually. |
@@ -137,7 +137,7 @@ Example:
 ```
 Customer.Name NOT Customer.CustomerName
 ```
-18. Try to prefix Boolean variables and properties with “Can”, “Is” or “Has”.
+18. Try to prefix Boolean variables and properties with "Can", "Is" or "Has".
 19. Append computational qualifiers to variable names like Average, Count, Sum, Min, and Max where
 appropriate.
 20. When defining a root namespace, use a Product, Company, or Developer Name as the root. Example:
@@ -153,16 +153,16 @@ My.StringUtilities
 |Resource or Embedded File | Try to use Pascal Case. Use a name describing the file contents. |
 |Namespace | Pascal Case. Try to partially match Project/Assembly Name. Example: ``` namespace My.Web {…} ```
 |Class or Struct | Pascal Case. Use a noun or noun phrase for class name. Add an appropriate class-suffix when sub-classing another type when possible. Examples: ``` private class MyClass {…} internal class SpecializedAttribute : Attribute {…} public class CustomerCollection : CollectionBase {…} public class CustomEventArgs : EventArgs {…} private struct ApplicationSettings {…} ``` |
-|Interface | Pascal Case. Always prefix interface name with capital “I”. Example: ``` interface ICustomer {…} ``` |
+|Interface | Pascal Case. Always prefix interface name with capital "I". Example: ``` interface ICustomer {…} ``` |
 | Generic Class & Generic Parameter Type |Always use a single capital letter, such as T or K. Example: ``` public class FifoStack<T> { public void Push(<T> obj) {…} public <T> Pop() {…} } ``` |
 |Method | Pascal Case. Try to use a Verb or Verb-Object pair. Example: ``` public void Execute() {…} private string GetAssemblyVersion(Assembly target) {…} ``` |
-|Property | Pascal Case. Property name should represent the entity it returns. Never prefix property names with “Get” or “Set”. Example: ```public string Name { get{…} set{…} } ``` |
+|Property | Pascal Case. Property name should represent the entity it returns. Never prefix property names with "Get" or "Set". Example: ```public string Name { get{…} set{…} } ``` |
 |Field (Public, Protected, or Internal) | Pascal Case. Avoid using non-private Fields! Use Properties instead. Example: ``` public string Name; protected IList InnerList; ``` |
 |Field (Private) | Camel Case and prefix with a single underscore (_) character. Example: ``` private string _name; ``` |
 |Constant or Static Field | Treat like a Field. Choose appropriate Field access-modifier above. |
 |Enum | Pascal Case (both the Type and the Options). Add the FlagsAttribute to bit-mask multiple options. Example: ``` public enum CustomerTypes { Consumer, Commercial } ``` |
 |Delegate or Event | Treat as a Field. Choose appropriate Field access-modifier above. Example: ``` public event EventHandler LoadPlugin; ``` |
-|Variable (inline) | Camel Case. Avoid using single characters like “x” or “y” except in FOR loops. Avoid enumerating variable names like text1, text2, text3 etc. |
+|Variable (inline) | Camel Case. Avoid using single characters like "x" or "y" except in FOR loops. Avoid enumerating variable names like text1, text2, text3 etc. |
 |Parameter | Camel Case. Example: ``` public void Execute(string commandText, int iterations) {…} ``` |
 
 
@@ -178,7 +178,7 @@ consistent code that is easy to understand and maintain.
 4. Always use curly braces ({ and }) in conditional statements.
 5. Always use a Tab & Indention size of 4.
 6. Declare each variable independently – not in the same statement.
-7. Place namespace “using” statements together at the top of file. Group .NET namespaces above custom
+7. Place namespace "using" statements together at the top of file. Group .NET namespaces above custom
 namespaces.
 8. Group internal class implementation by type in the following order:
 a. Member variables.
@@ -221,7 +221,7 @@ public class MyClass
 21. All comments should be written in the same language, be grammatically correct, and contain appropriate
 punctuation.
 22. Use // or /// but never /* … */
-23. Do not “flowerbox” comment blocks.
+23. Do not "flowerbox" comment blocks.
 Example:
 ```
  // ***************************************
@@ -230,7 +230,7 @@ Example:
  ```
 24. Use inline-comments to explain assumptions, known issues, and algorithm insights.
 25. Do not use inline-comments to explain obvious code. Well written code is self documenting.
-26. Only use comments for bad code to say “fix this code” – otherwise remove, or rewrite the code!
+26. Only use comments for bad code to say "fix this code" – otherwise remove, or rewrite the code!
 27. Include comments using Task-List keyword flags to allow comment-filtering.
 Example:
 ```
@@ -248,7 +248,7 @@ encoding issues.
 Example:
 ```
 /// <example>
-/// Add the following key to the “appSettings” section of your config:
+/// Add the following key to the "appSettings" section of your config:
 /// <code><![CDATA[
 /// <configuration>
 /// <appSettings>
@@ -272,7 +272,7 @@ Void WriteEvent(string message)
 private Void WriteEvent(string message)
 {…}
 ```
-2. Do not use the default (“1.0.*”) versioning scheme. Increment the AssemblyVersionAttribute value
+2. Do not use the default ("1.0.*") versioning scheme. Increment the AssemblyVersionAttribute value
 manually.
 3. Set the ComVisibleAttribute to false for all assemblies.
 4. Only selectively enable the ComVisibleAttribute for individual classes when needed.
@@ -315,7 +315,7 @@ uncommon).
 data sources.
 21. Declare readonly or static readonly variables instead of constants for complex types.
 22. Only declare constants for simple types.
-23. Avoid direct casts. Instead, use the “as” operator and check for null.
+23. Avoid direct casts. Instead, use the "as" operator and check for null.
 Example:
 ```
 object dataObject = LoadData();
@@ -334,10 +334,10 @@ int newCount = (int)refCount; // Explicitly unboxed.
 ```
 27. Floating point values should include at least one digit before the decimal place and one after.
 Example: totalPercent = 0.05;
-28. Try to use the “@” prefix for string literals instead of escaped strings.
+28. Try to use the "@" prefix for string literals instead of escaped strings.
 29. Prefer String.Format() or StringBuilder over string concatenation.
 30. Never concatenate strings inside a loop.
-31. Do not compare strings to String.Empty or “” to check for empty strings. Instead, compare by using
+31. Do not compare strings to String.Empty or "" to check for empty strings. Instead, compare by using
 String.Length == 0.
 32. Avoid hidden string allocations within a loop. Use String.Compare() for case-sensitive 
 Example (ToLower() create a temp string)
@@ -345,7 +345,7 @@ Example (ToLower() create a temp string)
 ```
 // Bad!
 int id = -1;
-string name = “john doe”;
+string name = "john doe";
 for(int i=0; i < customerList.Count; i++)
 {
 if(customerList[i].Name.ToLower() ToLower() ToLower() == name)
@@ -355,10 +355,10 @@ if(customerList[i].Name.ToLower() ToLower() ToLower() == name)
 }
 // Good!
 int id = -1;
-string name = “john doe”;
+string name = "john doe";
 for(int i=0; i < customerList.Count; i++)
 {
-// The “ignoreCase = true” argument performs a
+// The "ignoreCase = true" argument performs a
  // case-insensitive compare without new allocation.
 if(String.Compare String.Compare String.Compare(customerList[i].Name, name, true)== 0)
  {
@@ -463,9 +463,9 @@ maintained.
 56. Avoid defining custom exception classes. Use existing exception classes instead.
 57. When a custom exception is required;
 a. Always derive from Exception not ApplicationException.
-b. Always suffix exception class names with the word “Exception”.
+b. Always suffix exception class names with the word "Exception".
 c. Always add the SerializableAttribute to exception classes.
-d. Always implement the standard “Exception Constructor Pattern”:
+d. Always implement the standard "Exception Constructor Pattern":
 public MyCustomException ();
 public MyCustomException (string message);
 public MyCustomException (string message, Exception innerException);
@@ -493,7 +493,7 @@ info.AddValue("MyValue", _myValue);
 61. Use the default EventHandler and EventArgs for most simple events.
 62. Always derive a custom EventArgs class to provide additional data.
 63. Use the existing CancelEventArgs class to allow the event subscriber to control events.
-64. Always use the “lock” keyword instead of the Monitor type.
+64. Always use the "lock" keyword instead of the Monitor type.
 65. Only lock on a private or private static object.
 Example: lock(myVariable);
 66. Avoid locking on a Type.
@@ -507,7 +507,7 @@ Example:
 lock(this); 
 ```
 ### Object Composition
-68. Always declare types explicitly within a namespace. Do not use the default “{global}” namespace.
+68. Always declare types explicitly within a namespace. Do not use the default "{global}" namespace.
 69. Avoid overuse of the public access modifier. Typically fewer than 10% of your types and members will be
 part of a public API, unless you are writing a class library.
 70. Consider using internal or private access modifiers for types and members unless you intend to support
@@ -517,8 +517,8 @@ an inherited type.
 72. Avoid declaring methods with more than 5 parameters. Consider refactoring this code.
 73. Try to replace large parameter-sets (> than 5 parameters) with one or more class or struct parameters –
 especially when used in multiple method signatures.
-74. Do not use the “new” keyword on method and property declarations to hide members of a derived type.
-75. Only use the “base” keyword when invoking a base class constructor or base implementation within an
+74. Do not use the "new" keyword on method and property declarations to hide members of a derived type.
+75. Only use the "base" keyword when invoking a base class constructor or base implementation within an
 override.
 76. Consider using method overloading instead of the params attribute (but be careful not to break CLS
 Compliance of your API’s).
@@ -536,7 +536,7 @@ if (Enum.IsDefined(typeof(BookCategory), cat))
 79. Always override the Equality Operator (==) when overriding the Equals() method.
 80. Always override the String Implicit Operator when overriding the ToString() method.
 81. Always call Close() or Dispose() on classes that offer it.
-82. Wrap instantiation of IDisposable objects with a “using” statement to ensure that Dispose() is
+82. Wrap instantiation of IDisposable objects with a "using" statement to ensure that Dispose() is
 automatically called.
 Example:
 ```
@@ -579,13 +579,13 @@ void Finalize(){…}
 
 ## Object Model & API Design
 1. Always prefer aggregation over inheritance.
-2. Avoid “Premature Generalization”. Create abstractions only when the intent is understood.
+2. Avoid "Premature Generalization". Create abstractions only when the intent is understood.
 3. Do the simplest thing that works, then refactor when necessary.
 4. Always make object-behavior transparent to API consumers.
 5. Avoid unexpected side-affects when properties, methods, and constructors are invoked.
 6. Always separate presentation layer from business logic.
 7. Always prefer interfaces over abstract classes.
-8. Try to include the design-pattern names such as “Bridge”, “Adapter”, or “Factory” as a suffix to class names
+8. Try to include the design-pattern names such as "Bridge", "Adapter", or "Factory" as a suffix to class names
 where appropriate.
 9. Only make members virtual if they are designed and tested for extensibility.
 10. Refactor often! 
