@@ -285,7 +285,8 @@ public MyClass
 ```
 5. Consider factoring classes containing unsafe code blocks into a separate assembly.
 6. Avoid mutual references between assemblies.
-4.2 Variables & Types
+
+### Variables & Types
 7. Try to initialize variables where you declare them.
 8. Always choose the simplest data type, list, or object required.
 9. Always use the built-in C# data type aliases, not the .NET common type system (CTS).
